@@ -1,19 +1,19 @@
 {
-    "builds": [
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "frontend/dist"
-        }
-      },
-      {
-        "src": "backend/api/**/*.js",
-        "use": "@vercel/node"
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist",
+        "buildCommand": "node build.js"
       }
-    ],
-    "env": {
-      "NODE_ENV": "production"
+    },
+    {
+      "src": "backend/api/**/*.js",
+      "use": "@vercel/node"
     }
+  ],
+  "env": {
+    "NODE_ENV": "production"
   }
-  
+}
