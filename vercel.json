@@ -5,7 +5,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "frontend/dist",
-        "buildCommand": "node build.js"
+        "buildCommand": "pnpm run build"
       }
     },
     {
