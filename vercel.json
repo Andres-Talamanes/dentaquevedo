@@ -1,19 +1,19 @@
 {
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/dist",
-        "buildCommand": "pnpm run build"
+    "builds": [
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "frontend/dist"
+        }
+      },
+      {
+        "src": "backend/api/**/*.js",
+        "use": "@vercel/node"
       }
-    },
-    {
-      "src": "backend/api/**/*.js",
-      "use": "@vercel/node"
+    ],
+    "env": {
+      "NODE_ENV": "production"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
-}
+  
