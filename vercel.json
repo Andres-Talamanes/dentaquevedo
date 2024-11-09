@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build",
+  "buildCommand": "pnpm --filter frontend run build && pnpm --filter backend install",
   "builds": [
     {
       "src": "frontend/package.json",
@@ -7,11 +7,16 @@
       "config": {
         "distDir": "frontend/dist"
       }
-      
     },
     {
       "src": "backend/package.json",
       "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/$1"
     }
   ]
 }
